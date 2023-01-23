@@ -1,0 +1,57 @@
+﻿@model Slider
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="container-fluid">
+    <h1>Update</h1>
+
+    <form method="post" enctype="multipart/form-data">
+        <div class="row align-items-center">
+            <div class="mb-3 col-md-2">
+                <label asp-for="AuthorName" class="form-label">AuthorName</label>
+                <input asp-for="AuthorName" class="form-control" placeholder="AuthorName">
+                <span asp-validation-for="AuthorName" class="text-danger"></span>
+            </div>
+            <div class="mb-3 col-md-2">
+                <label asp-for="Title" class="form-label">Title</label>
+                <input asp-for="Title" class="form-control" placeholder="Title">
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+            <div class="mb-3 col-md-2">
+                <label asp-for="Imagefile" class="form-label">Imagefile</label>
+                <input asp-for="Imagefile" class="form-control" placeholder="Imagefile">
+                <span asp-validation-for="Imagefile" class="text-danger"></span>
+                
+            </div>
+            <div class="mb-3 col-md-2">
+                <label asp-for="Price" class="form-label">Price</label>
+                <input asp-for="Price" class="form-control" placeholder="Price">
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+            <div class="mb-3 col-md-2">
+                <label asp-for="RedirectUrl" class="form-label">RedirectUrl</label>
+                <input asp-for="RedirectUrl" class="form-control" placeholder="RedirectUrl">
+                <span asp-validation-for="RedirectUrl" class="text-danger"></span>
+            </div>
+            <div class="mb-3 col-md-2">
+                <label asp-for="Order" class="form-label">Order</label>
+                <input asp-for="Order" class="form-control" placeholder="Order">
+                <span asp-validation-for="Order" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="row align-items-center">
+            <div class="mb-3 col-md-4">
+                <label asp-for="Desc" class="form-label">Desc</label>
+                <textarea class="form-control" asp-for="Desc" rows="2" placeholder="Description"></textarea>
+                <span asp-validation-for="Desc" class="text-danger"></span>
+            </div>
+            <p>Photo:       a </p>
+            <td><img style="width:100px" src="~/uploads/slider/@Model.Img" alt=""></td>
+            <input type="hidden" name="@Model.Img" value="@Model.Img"  />
+        </div>
+
+            <button type="submit" class="btn btn-primary">Update</button>
+    </form>
+</div>
